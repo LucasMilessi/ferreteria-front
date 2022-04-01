@@ -54,7 +54,7 @@ const AddClientes = () => {
                 <label>Ingrese una Cedual</label>
                 <input class="form-control form-control-sm" placeholder='Ingrese Cedula' onChange={ event => {setCedula(event.target.value)}}></input>
             
-                <button type='submit' className='btn btn-warning'>Crear Cliente</button> 
+                <button type='submit' className='btn btn-warning'>Crear Cliente ➕</button> 
             </form>
         </div>
         </>

@@ -1,38 +1,53 @@
 import React from "react";
-import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import AddClientes from "../containers/pages/AddClientes"
-import AddProveedor from "../containers/pages/AddProveedor";
-import AddProducto from "../containers/pages/AddProducto";
+import AddClientes from "../containers/AddClientes"
+import AddProveedor from "../containers/AddProveedor";
+import AddProducto from "../containers/AddProducto";
+
 
 
 function AdminView() {
-  return(
+  return (
     <>
-     <h1>Hola, admin</h1>
-  <div>
-  <BrowserRouter>
-    <div>
-      <li>
-      <Link to="/AgregarCliente">Inscribir Cliente</Link>
-      </li>
+      <h1>Hola RAÚL</h1>
+      <div>
+        <BrowserRouter>
+          <table className="table table-dark">
 
-      <li>
-      <Link to="/AgregarProveedor">Inscribir Proveedor</Link>
-      </li>
+            <thead>
+              <tr>
+                <th scope="col">Menú 🔧</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <Link to="/AgregarCliente">Inscribir Cliente ➕</Link>
+                </th>
+                <td>
+                  <Link to="/AgregarProveedor">Inscribir Proveedor ➕</Link>
+                </td>
+                <td>
+                  <Link to="/AgregarProducto">Agregar Productos ➕</Link>
+                </td>
+                <td>
+                  <Link to="/Vender">Vender Herramientas 🛒</Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-      <li>
-      <Link to="/AgregarProducto">Productos</Link>
-      </li>
-      
-    </div>
-      <Routes>
-      <Route path="/AgregarCliente" element={<AddClientes />} />
-      <Route path="/AgregarProveedor" element={<AddProveedor />} />
-      <Route path="/AgregarProducto" element={<AddProducto />} />
-      </Routes>
-  </BrowserRouter>
-  </div>
+          <table className="table table-dark"></table>
+          <Routes>
+            <Route path="/AgregarCliente" element={<AddClientes />} />
+            <Route path="/AgregarProveedor" element={<AddProveedor />} />
+            <Route path="/AgregarProducto" element={<AddProducto />} />
+
+
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 

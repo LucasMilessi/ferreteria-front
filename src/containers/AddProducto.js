@@ -63,7 +63,7 @@ const AddProducto = () => {
 
     return (
         <>
-            <h1>Gestion Praducto</h1>
+            <h1>Agregar Productos</h1>
             <form onSubmit={AgregarProducto}>
                 <label>Nombre Producto</label>
                 <input class="form-control form-control-sm" placeholder='Ingrese Nombre del Producto' onChange={event => { setNombre(event.target.value) }}></input>
@@ -80,7 +80,7 @@ const AddProducto = () => {
                         <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
                     ))}
                 </select>
-                <button className='btn btn-warning m-2' type='submit'>Registrar Producto</button>
+                <button className='btn btn-warning m-2' type='submit'>Registrar Producto ➕</button>
             </form>
         </>
     )

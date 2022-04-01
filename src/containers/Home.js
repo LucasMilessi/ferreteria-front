@@ -1,7 +1,6 @@
 import React from "react";
 
 import AdminView from "../routes/AdminView";
-import UserView from "../components/UserView";
 
 import Logo from '../assets/img/logo.png'
 
@@ -20,7 +19,7 @@ function Home({ user }) {
           <button onClick={() => signOut(auth)}> Cerrar sesión</button>
      </div>
      <div className="title-saludo" >
-      {user.rol === "admin" ? <AdminView /> : <UserView />}
+      <AdminView />
      </div>
     </div>
   );

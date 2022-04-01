@@ -54,7 +54,7 @@ const AddProveedor = () => {
                 <label placeholder='Ingrese Cedula'>Ingrese una Cedual</label>
                 <input class="form-control form-control-sm" placeholder='Ingrese Nombre' onChange={ event => {setCedula(event.target.value)}}></input>
             
-                <button type='submit' className='btn btn-warning'>Crear Proveedor</button> 
+                <button type='submit' className='btn btn-warning'>Crear Proveedor ➕</button> 
             </form>
         </div>
         </>
