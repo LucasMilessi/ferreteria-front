@@ -1,7 +1,11 @@
 import React from "react";
 
+
 function AdminView() {
-  return <div>Hola, admin</div>;
-}
+  return(
+    <>
+    </>
+    )
+  }
 
 export default AdminView;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import AdminView from "../components/AdminView";
+import AdminView from "../routes/AdminView";
 import UserView from "../components/UserView";
 
 import Logo from '../assets/img/logo.png'

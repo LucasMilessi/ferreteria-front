@@ -3,12 +3,9 @@ import React, { useState } from "react";
 import Logo from '../assets/img/logo.png'
 
 import firebaseApp from "../firebase/credenciales";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+
 const auth = getAuth(firebaseApp);
 
 function Login() {
