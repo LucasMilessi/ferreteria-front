@@ -15,7 +15,7 @@ function Home({ user }) {
         <img className="logo" src={Logo} />
      </div>
      <div className="div-home" >
-          <h1  >Home</h1>
+          <h1>Ferreteria ⚙️</h1>
           <button onClick={() => signOut(auth)}> Cerrar sesión</button>
      </div>
      <div className="title-saludo" >

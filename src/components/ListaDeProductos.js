@@ -49,7 +49,7 @@ const ListaDeProductos = () => {
             });
     }
 
-    const AddProcutoSeleccionado = (valorProducto) => {
+    const AddProdutoSeleccionado = (valorProducto) => {
 
         let producto = productosSeleccionados.find(producto => producto.id == valorProducto.id);
 
@@ -77,7 +77,7 @@ const ListaDeProductos = () => {
         }
 
     const elegirCliente = (valorCliente) => {
-        let cliente = clientes.find(cliente => cliente.id == valorCliente);
+        let cliente = clientes.find(cliente => cliente.productoId == valorCliente);
 
         setClienteSeleccionado(cliente);
     }
@@ -85,9 +85,9 @@ const ListaDeProductos = () => {
     const descontarStock = (productosComprados) => {
 
         productosComprados.map((productoComprado) => {
-            let BuscarIdProducto = productos.findIndex(p => p.id === productoComprado.id);
+            let BuscarIdProducto = productos.findIndex(p => p.productoId === productoComprado.productoId);
             let producto = {
-                "nombre": productos[BuscarIdProducto].nombre,
+                "nombre": productos[BuscarIdProducto].nombreProducto,
                 "cantidad": productos[BuscarIdProducto].cantidad - productoComprado.cantidad,
                 "precio": productos[BuscarIdProducto].precio,
                 "proveedor": productos[BuscarIdProducto].proveedor
@@ -98,7 +98,7 @@ const ListaDeProductos = () => {
                 body: JSON.stringify(producto)
             };
 
-                fetch(HOST_API + "/producto/" + productos[BuscarIdProducto].id, request)
+                fetch(HOST_API + "/producto/" + productos[BuscarIdProducto].productoId, request)
                     .then(response => response.json())
                     .then((p) => {
                         console.log(p);
@@ -146,7 +146,7 @@ const ListaDeProductos = () => {
                         <td>
                             <AgregarProductosACarro
                                 producto={producto}
-                                setSelected={AddProcutoSeleccionado}
+                                setSelected={AddProdutoSeleccionado}
                             />
                         </td>
                     </tr>
@@ -196,3 +196,5 @@ const ListaDeProductos = () => {
     )
 
 } 
+
+export default ListaDeProductos;

@@ -4,20 +4,19 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import AddClientes from "../containers/AddClientes"
 import AddProveedor from "../containers/AddProveedor";
 import AddProducto from "../containers/AddProducto";
+import NewVenta from "../containers/NewVenta";
 
 
 
 function AdminView() {
   return (
     <>
-      <h1>Hola RAÚL</h1>
       <div>
         <BrowserRouter>
-          <table className="table table-dark">
-
+          <table className="m-2">
             <thead>
               <tr>
-                <th scope="col">Menú 🔧</th>
+                <th scope="col">Altas 🔧</th>
               </tr>
             </thead>
             <tbody>
@@ -31,6 +30,18 @@ function AdminView() {
                 <td>
                   <Link to="/AgregarProducto">Agregar Productos ➕</Link>
                 </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <table className="m-2">
+            <thead>
+              <tr>
+                <th scope="col">Venta 🔧</th>
+              </tr>
+              </thead>
+            <tbody>
+              <tr>
                 <td>
                   <Link to="/Vender">Vender Herramientas 🛒</Link>
                 </td>
@@ -43,7 +54,8 @@ function AdminView() {
             <Route path="/AgregarCliente" element={<AddClientes />} />
             <Route path="/AgregarProveedor" element={<AddProveedor />} />
             <Route path="/AgregarProducto" element={<AddProducto />} />
-
+            <Route path="/AgregarProducto" element={<AddProducto />} />
+            <Route path="/Vender" element={<NewVenta />} />
 
           </Routes>
         </BrowserRouter>
