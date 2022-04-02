@@ -30,8 +30,8 @@ const ListaDeProductos = () => {
 
         fetch(HOST_API + "/clientes", requestOptions)
             .then(response => response.json())
-            .then((clients) => {
-                setClientes(clients);
+            .then((clientes) => {
+                setClientes(clientes);
             });
     }
 
@@ -51,14 +51,14 @@ const ListaDeProductos = () => {
 
     const AddProdutoSeleccionado = (valorProducto) => {
 
-        let producto = productosSeleccionados.find(producto => producto.id == valorProducto.id);
+        let producto = productosSeleccionados.find(producto => producto.productoId == valorProducto.productoId);
 
         if (producto == undefined) { //Si el producto seleccionado no se encuentra en la lista ya seleccionada, se agrega
             setProductosSeleccionados(productosSeleccionados => [...productosSeleccionados, valorProducto]);
 
         } else { //Si el producto se encuentra ya seleccionado, se selecciona nuevamente la cantidad deceada y se actualiza 
 
-            let index = productosSeleccionados.findIndex(p => p.id === valorProducto.id);
+            let index = productosSeleccionados.findIndex(p => p.productoId === valorProducto.productoId);
 
             productosSeleccionados.splice(index, 1);
 
@@ -100,15 +100,15 @@ const ListaDeProductos = () => {
 
                 fetch(HOST_API + "/producto/" + productos[BuscarIdProducto].productoId, request)
                     .then(response => response.json())
-                    .then((p) => {
-                        console.log(p);
+                    .then((producto) => {
+                        console.log(producto);
                         mostrarProductos();
                 });
         });
     }
 
-    const addFacturaCliente = (e) => {
-        e.preventDefault();
+    const addFacturaCliente = (event) => {
+        event.preventDefault();
 
         const fecha = Date.now();
         const fechaDeHoy = new Date(fecha);
@@ -119,8 +119,8 @@ const ListaDeProductos = () => {
             atencionCliente: "Raul",
             productosPagos: productosSeleccionados,
             totalPago: precioTotal
-
         }
+
             console.log(JSON.stringify(datosDeFactura));
             const requestOptions = {
                 method: 'POST',
@@ -134,7 +134,7 @@ const ListaDeProductos = () => {
                 console.log(factura);
                 descontarStock(factura.productosPagos)
                 });
-            e.target.reset();
+            event.target.reset();
     }
 
     return (<div>
@@ -163,7 +163,7 @@ const ListaDeProductos = () => {
                         <>
                             <tr>
                                 <td>Producto</td>
-                                <td>{productoSelect.nombre}</td>
+                                <td>{productoSelect.nombreProducto}</td>
                             </tr>
                             <tr>
                                 <td>Cantidad</td>

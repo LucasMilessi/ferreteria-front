@@ -8,8 +8,8 @@ const MostrarProductos = (props) => {
     const addProducto = () => {
 
         let producto = {
-            id: props.producto.producto,
-            nombre: props.producto.nombre,
+            id: props.producto.productoId,
+            nombre: props.producto.nombreProducto,
             precio: props.producto.precio,
             cantidad: cantidadDeProductos
         }
@@ -36,7 +36,7 @@ const MostrarProductos = (props) => {
         <>
 
             <label>
-                Producto: {props.producto.nombre}
+                Producto: {props.producto.nombreProducto}
             </label>
 
             <label>

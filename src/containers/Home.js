@@ -16,7 +16,7 @@ function Home({ user }) {
      </div>
      <div className="div-home" >
           <h1>Ferreteria ⚙️</h1>
-          <button onClick={() => signOut(auth)}> Cerrar sesión</button>
+          <button className="btn btn-danger" onClick={() => signOut(auth)}>Cerrar sesión</button>
      </div>
      <div className="title-saludo" >
       <AdminView />

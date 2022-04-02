@@ -4,32 +4,18 @@ const HOST_API = "http://localhost:8080";
 
 const AddProducto = () => {
 
-    const [nombre, setNombre] = useState();
+    const [nombreProducto, setNombreProducto] = useState();
     const [cantidad, setCantidad] = useState();
     const [precio, setPrecio] = useState();
     const [proveedor, setProveedor] = useState();
     const [proveedores, setProveedores] = useState([]);
 
     const datosValidados = () => {
-        if (nombre != undefined && precio != undefined && cantidad != undefined) {
+        if (nombreProducto !== undefined && precio !== undefined && cantidad !== undefined) {
             return true;
         }
         return false;
     }
-
-    useEffect(() => {
-        const request = {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        };
-
-        fetch(HOST_API + "/Proveedores", request)
-            .then(response => response.json())
-            .then((proveedores) => {
-                setProveedores(proveedores);
-                setProveedor(proveedores[0].id);
-            });
-    }, []);
 
     const AgregarProducto = (event) => {
         event.preventDefault();
@@ -39,7 +25,7 @@ const AddProducto = () => {
         if (datosValidados) {
 
             let request = {
-                "nombre": nombre,
+                "nombre": nombreProducto,
                 "precio": precio,
                 "cantidad": cantidad,
                 "proveedor": prov
@@ -61,12 +47,28 @@ const AddProducto = () => {
         event.target.reset();
     }
 
+    useEffect(() => {
+        const request = {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        };
+
+        fetch(HOST_API + "/Proveedores", request)
+            .then(response => response.json())
+            .then((proveedores) => {
+                setProveedores(proveedores);
+                setProveedor(proveedores[0].id);
+            });
+    }, []);
+
+    
+
     return (
         <>
             <h1>Agregar Productos</h1>
             <form onSubmit={AgregarProducto}>
-                <label>Nombre Producto</label>
-                <input class="form-control form-control-sm" placeholder='Ingrese Nombre del Producto' onChange={event => { setNombre(event.target.value) }}></input>
+                <label>Producto</label>
+                <input class="form-control form-control-sm" placeholder='Ingrese Nombre del Producto' onChange={event => { setNombreProducto(event.target.value) }}></input>
 
                 <label>Precio</label>
                 <input class="form-control form-control-sm" placeholder='Ingrese Precio' onChange={event => { setPrecio(event.target.value) }}></input>
