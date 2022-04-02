@@ -16,7 +16,7 @@ function AdminView() {
     <>
       <div>
         <BrowserRouter>
-          <table className="m-2">
+          <table class="table table-dark m-2">
             <thead>
               <tr>
                 <th scope="col">Altas 🔧</th>
@@ -37,7 +37,7 @@ function AdminView() {
             </tbody>
           </table>
 
-          <table className="m-2">
+          <table class="table table-dark m-2">
             <thead>
               <tr>
                 <th scope="col">Venta 🔧</th>
@@ -52,7 +52,7 @@ function AdminView() {
             </tbody>
           </table>
 
-          <table className="m-2">
+          <table class="table table-dark m-2">
             <thead>
               <tr>
                 <th scope="col"> Sin Stock 🔧</th>
@@ -67,7 +67,7 @@ function AdminView() {
             </tbody>
           </table>
 
-          <table className="m-2">
+          <table class="table table-dark m-2">
             <thead>
               <tr>
                 <th scope="col"> Ver Clientes 🔧</th>
