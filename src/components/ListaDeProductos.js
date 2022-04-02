@@ -51,7 +51,7 @@ const ListaDeProductos = () => {
 
     const AddProdutoSeleccionado = (valorProducto) => {
 
-        let producto = productosSeleccionados.find(producto => producto.productoId == valorProducto.productoId);
+        let producto = productosSeleccionados.find(producto => producto.id == valorProducto.productoId);
 
         if (producto == undefined) { //Si el producto seleccionado no se encuentra en la lista ya seleccionada, se agrega
             setProductosSeleccionados(productosSeleccionados => [...productosSeleccionados, valorProducto]);
@@ -69,14 +69,16 @@ const ListaDeProductos = () => {
     }
 
     const precioFinal = () => {
+
         let valorFinal = 0;
         productosSeleccionados.map((productoSeleccionado) => {
             valorFinal += productoSeleccionado.cantidad * productoSeleccionado.precio;
         })
         setPrecioTotal(valorFinal);
-        }
+    }
 
     const elegirCliente = (valorCliente) => {
+
         let cliente = clientes.find(cliente => cliente.productoId == valorCliente);
 
         setClienteSeleccionado(cliente);
@@ -88,8 +90,8 @@ const ListaDeProductos = () => {
             let BuscarIdProducto = productos.findIndex(p => p.productoId === productoComprado.productoId);
             let producto = {
                 "nombre": productos[BuscarIdProducto].nombreProducto,
-                "cantidad": productos[BuscarIdProducto].cantidad - productoComprado.cantidad,
                 "precio": productos[BuscarIdProducto].precio,
+                "cantidad": productos[BuscarIdProducto].cantidad - productoComprado.cantidad,               
                 "proveedor": productos[BuscarIdProducto].proveedor
             }
             const request = {
@@ -159,19 +161,19 @@ const ListaDeProductos = () => {
 
             <table className='table'>
                 {
-                    productosSeleccionados.map(productoSelect => (
+                    productosSeleccionados.map(productoSeleccion => (
                         <>
                             <tr>
                                 <td>Producto</td>
-                                <td>{productoSelect.nombreProducto}</td>
+                                <td>{productoSeleccion.nombreProducto}</td>
                             </tr>
                             <tr>
                                 <td>Cantidad</td>
-                                <td>{productoSelect.cantidad}</td>
+                                <td>{productoSeleccion.cantidad}</td>
                             </tr>
                             <tr>
                                 <td>Precio</td>
-                                <td>{productoSelect.cantidad * productoSelect.precio}</td>
+                                <td>{productoSeleccion.cantidad * productoSeleccion.precio}</td>
                             </tr>
                         </>
                     ))
@@ -188,7 +190,7 @@ const ListaDeProductos = () => {
                         <option key={cliente.id} value={cliente.id}>{cliente.documentoID}</option>
                     ))}
                 </select>
-                <input type="submit" value="Finalizar Compra"></input>
+                <input class="form-control form-control-sm" type="submit" value="Finalizar Compra"></input>
             </form>
         </div>
     </div>

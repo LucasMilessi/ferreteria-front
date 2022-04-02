@@ -5,6 +5,7 @@ import AddClientes from "../containers/AddClientes"
 import AddProveedor from "../containers/AddProveedor";
 import AddProducto from "../containers/AddProducto";
 import NewVenta from "../containers/NewVenta";
+import GetProductosSinStock from "../containers/GetProductosSinStock";
 
 
 
@@ -49,6 +50,21 @@ function AdminView() {
             </tbody>
           </table>
 
+          <table className="m-2">
+            <thead>
+              <tr>
+                <th scope="col"> Sin Stock 🔧</th>
+              </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <Link to="/SinStock">Productos sin Stock</Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <table className="table table-dark"></table>
           <Routes>
             <Route path="/AgregarCliente" element={<AddClientes />} />
@@ -56,6 +72,7 @@ function AdminView() {
             <Route path="/AgregarProducto" element={<AddProducto />} />
             <Route path="/AgregarProducto" element={<AddProducto />} />
             <Route path="/Vender" element={<NewVenta />} />
+            <Route path="/Vender" element={<GetProductosSinStock />} />
 
           </Routes>
         </BrowserRouter>
