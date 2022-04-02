@@ -78,7 +78,7 @@ const AddProducto = () => {
                 <input class="form-control form-control-sm" placeholder='Ingrese Cantidad' onChange={event => { setCantidad(event.target.value) }}></input>
 
                 <label>Proveedor: </label>
-                <select className='m-2' onChange={event => { setProveedor(event.target.value) }}>
+                <select className='m-2 text-white-50 bg-dark' onChange={event => { setProveedor(event.target.value) }}>
                     {proveedores.map(proveedor => (
                         <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
                     ))}
