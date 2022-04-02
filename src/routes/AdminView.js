@@ -61,7 +61,7 @@ function AdminView() {
             <tbody>
               <tr>
                 <td>
-                  <Link to="/SinStock">Productos sin Stock</Link>
+                  <Link to="/SinStock">Productos sin Stock 🏬</Link>
                 </td>
               </tr>
             </tbody>
