@@ -5,11 +5,11 @@ const MostrarProductos = (props) => {
 
     const [cantidadDeProductos, setCantidadDeProductos] = useState();
 
-    const addProducto = () => {
+    const AgregarProducto = () => {
 
         let producto = {
-            id: props.producto.productoId,
-            nombre: props.producto.nombreProducto,
+            productoId: props.producto.productoId,
+            nombreProducto: props.producto.nombreProducto,
             precio: props.producto.precio,
             cantidad: cantidadDeProductos
         }
@@ -35,20 +35,20 @@ const MostrarProductos = (props) => {
     return (
         <>
 
-            <label>
+            <label className='table table-dark m-2'>
                 Producto: {props.producto.nombreProducto}
             </label>
 
-            <label>
+            <label className='table table-dark m-2'>
                 Precio:{props.producto.precio}
             </label>
 
-            <label>
-                Stock: {props.producto.cantidadDeProductos}
+            <label className='table table-dark m-2'>
+                Stock: {props.producto.cantidad}
             </label>
 
             <input type="number" onChange={(event) => { actualizarCantidad(event.target) }}></input>
-            <button onClick={addProducto}>🛒</button>
+            <button className='text-white-50 bg-dark' onClick={AgregarProducto}>🛒</button>
 
         </>
     );

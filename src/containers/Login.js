@@ -42,11 +42,13 @@ function Login() {
     
     if (isRegistrando) {
       // registrar
-      registrarUsuario(email, password, rol);
+      registrarUsuario(email, password, rol).catch(function(error){
+        window.alert("Este usuario ya esta registrado");
+      });
     } else {
       // login
       signInWithEmailAndPassword(auth, email, password).catch(function(error){
-        window.alert("Este usuario no esta registrado")
+        window.alert("Este usuario no esta registrado");
       });
     }
   }

@@ -25,10 +25,10 @@ const AddProducto = () => {
         if (datosValidados) {
 
             let request = {
-                "nombre": nombreProducto,
-                "precio": precio,
-                "cantidad": cantidad,
-                "proveedor": prov
+                nombre : nombreProducto,
+                precio : precio,
+                cantidad : cantidad,
+                proveedor: prov
             }
 
             const request2 = {
@@ -67,6 +67,7 @@ const AddProducto = () => {
         <>
             <h1>Agregar Productos</h1>
             <form onSubmit={AgregarProducto}>
+                
                 <label>Producto</label>
                 <input class="form-control form-control-sm" placeholder='Ingrese Nombre del Producto' onChange={event => { setNombreProducto(event.target.value) }}></input>
 

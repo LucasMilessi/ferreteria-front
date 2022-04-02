@@ -58,7 +58,7 @@ const ListaDeProductos = () => {
 
         } else { //Si el producto se encuentra ya seleccionado, se selecciona nuevamente la cantidad deceada y se actualiza 
 
-            let index = productosSeleccionados.findIndex(p => p.productoId === valorProducto.productoId);
+            let index = productosSeleccionados.findIndex(p => p.id === valorProducto.productoId);
 
             productosSeleccionados.splice(index, 1);
 
@@ -184,13 +184,17 @@ const ListaDeProductos = () => {
                 </tr>
             </table>
             <form className='form' onSubmit={addFacturaCliente}>
-                <h3>Cedula</h3>
-                <select onChange={event => { elegirCliente(event.target.value) }}>
+                <h3>Nombre y Cedula</h3>
+                <select className='m-2 text-white-50 bg-dark' onChange={event => { elegirCliente(event.target.value) }}>
                     {clientes.map(cliente => (
-                        <option key={cliente.id} value={cliente.id}>{cliente.documentoID}</option>
+                        <option key={cliente.clienteId} value={cliente.clienteId}>
+                            {cliente.nombre}
+                            ==
+                            {cliente.cedula}
+                            </option>
                     ))}
                 </select>
-                <input class="form-control form-control-sm" type="submit" value="Finalizar Compra"></input>
+                <input class="form-control form-control-sm text-white-50 bg-dark" type="submit" value="Finalizar Compra"></input>
             </form>
         </div>
     </div>

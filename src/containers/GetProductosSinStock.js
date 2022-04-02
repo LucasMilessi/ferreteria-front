@@ -12,12 +12,12 @@ const GetProductosSinStock = () => {
        },[]);
 
        const mostrarProductos = ()=>{
-        const requestOptions = {
+        const request = {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
         };
 
-        fetch(HOST_API + "/Productos", requestOptions)
+        fetch(HOST_API + "/Productos", request)
             .then(response => response.json())
             .then((productos) => {
                
@@ -37,7 +37,7 @@ const GetProductosSinStock = () => {
         setProductos(prodSinStock);
 
     }
-    
+
     return ( 
     <> 
         {productos.map(producto => (

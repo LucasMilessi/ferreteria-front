@@ -5,7 +5,7 @@ const ListaDeProductoSinStock = (props) => {
 
     return (
         <>
-            <table class="table">
+            <table class="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col">Producto</th>
@@ -15,7 +15,7 @@ const ListaDeProductoSinStock = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{props.producto.nombre}</td>
+                        <td>{props.producto.nombreProducto}</td>
                         <td>{props.producto.precio}</td>
                         <td>{props.producto.cantidad}</td>
                     </tr>

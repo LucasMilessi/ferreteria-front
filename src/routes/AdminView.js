@@ -6,6 +6,8 @@ import AddProveedor from "../containers/AddProveedor";
 import AddProducto from "../containers/AddProducto";
 import NewVenta from "../containers/NewVenta";
 import GetProductosSinStock from "../containers/GetProductosSinStock";
+import GetClientes from "../containers/GetClientes";
+import GetProveedores from "../containers/GetProveedores"
 
 
 
@@ -65,6 +67,24 @@ function AdminView() {
             </tbody>
           </table>
 
+          <table className="m-2">
+            <thead>
+              <tr>
+                <th scope="col"> Ver Clientes 🔧</th>
+              </tr>
+              </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <Link to="/clientes">Mis Clientes 👷🏽</Link>
+                </td>
+                <td>
+                  <Link to="/proveedores">Mis Proveedores 🚚</Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <table className="table table-dark"></table>
           <Routes>
             <Route path="/AgregarCliente" element={<AddClientes />} />
@@ -72,7 +92,9 @@ function AdminView() {
             <Route path="/AgregarProducto" element={<AddProducto />} />
             <Route path="/AgregarProducto" element={<AddProducto />} />
             <Route path="/Vender" element={<NewVenta />} />
-            <Route path="/Vender" element={<GetProductosSinStock />} />
+            <Route path="/SinStock" element={<GetProductosSinStock />} />
+            <Route path="/clientes" element={<GetClientes />} />
+            <Route path="/proveedores" element={<GetProveedores />} />
 
           </Routes>
         </BrowserRouter>
